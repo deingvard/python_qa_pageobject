@@ -28,3 +28,6 @@ class BasePage:
 
     def _wait_for_visible(self, selector, link_text=None, index=0, wait=3):
         return WebDriverWait(self.driver, wait).until(EC.visibility_of(self.__element(selector, index, link_text)))
+
+    def _get_element_text(self, selector, index):
+        return self.__element(selector, index).text
