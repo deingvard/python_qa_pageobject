@@ -1,10 +1,8 @@
 from locators import Main
+from .BasePage import BasePage
 
 
-class MainPage:
-
-    def __init__(self, driver):
-        self.driver = driver
+class MainPage(BasePage):
 
     def click_featured_product(self, number):
         index = number - 1

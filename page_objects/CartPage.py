@@ -1,13 +1,10 @@
 from locators import Cart
+from .BasePage import BasePage
 
-
-class CartPage:
-
-    def __init__(self, driver):
-        self.driver = driver
+class CartPage(BasePage):
 
     def checkout(self):
-        self.driver.find_element_by_css_selector(Cart.bottom_btn.checkout['css']).click()
+        self._click(Cart.bottom_btn.checkout)
 
     def verify_product(self, name):
-        self.driver.find_element_by_link_text(name)
+        self._wait_for_visible(name, link_text=True)

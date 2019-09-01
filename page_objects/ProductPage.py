@@ -1,13 +1,11 @@
-from locators import Product, Common
+from locators import Product
+from .BasePage import BasePage
 
 
-class ProductPage:
-
-    def __init__(self, driver):
-        self.driver = driver
+class ProductPage(BasePage):
 
     def add_to_wishlist(self):
-        self.driver.find_element_by_css_selector(Product.add_to_wishlist['css']).click()
+        self._click(Product.add_to_wishlist)
 
     def add_to_cart(self):
-        self.driver.find_element_by_css_selector(Product.add_to_cart['css']).click()
+        self._click(Product.add_to_cart)
