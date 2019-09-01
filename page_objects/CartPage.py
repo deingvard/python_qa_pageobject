@@ -8,3 +8,4 @@ class CartPage(BasePage):
 
     def verify_product(self, name):
         self._wait_for_visible(name, link_text=True)
+        return self
