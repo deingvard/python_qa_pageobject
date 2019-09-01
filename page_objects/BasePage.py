@@ -3,11 +3,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from .common.Alert import Alert
+
 
 class BasePage:
 
     def __init__(self, driver):
         self.driver = driver
+        self.alert = Alert(self.driver)
 
     def __element(self, selector: dict, index: int, link_text: str = None):
         by = None
