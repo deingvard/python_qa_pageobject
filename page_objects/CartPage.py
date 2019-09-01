@@ -1,0 +1,2 @@
+class CartPage:
+    pass

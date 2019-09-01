@@ -26,10 +26,8 @@ def browser(request, url):
         raise Exception(f"{request.param} is not supported!")
     driver.implicitly_wait(5)
     request.addfinalizer(driver.close)
-
     def open(path=""):
         return driver.get(url + path)
-
     driver.open = open
-
+    driver.open()
     return driver

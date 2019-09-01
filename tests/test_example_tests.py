@@ -2,7 +2,6 @@ from locators import Common, Main, Product, Cart, User
 
 
 def test_add_to_wish_list(browser):
-    browser.open()
     # Клик по первому элементу в блоке featured
     feature_product = browser.find_elements_by_css_selector(Main.featured.products['css'])[0]
     product_name = feature_product.find_element_by_css_selector(Main.featured.names['css']).text
@@ -22,7 +21,6 @@ def test_add_to_wish_list(browser):
 
 
 def test_add_to_cart(browser):
-    browser.open()
     # Клик по первому элементу в блоке featured
     feature_product = browser.find_elements_by_css_selector(Main.featured.products['css'])[0]
     product_name = feature_product.find_element_by_css_selector(Main.featured.names['css']).text
